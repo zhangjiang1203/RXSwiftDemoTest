@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+/*
+ 默认颜色
+ */
+func RGBColor(r :CGFloat ,g:CGFloat,b:CGFloat) ->UIColor{
+    
+    return UIColor(displayP3Red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: 1 )
+}
+
+func RGBCOLOR_HEX(h:Int) ->UIColor {
+    return RGBColor(r: CGFloat(((h)>>16) & 0xFF), g:CGFloat(((h)>>8) & 0xFF), b:  CGFloat((h) & 0xFF))
+}
+
 extension String {
     
     /// 计算字符串的高度

@@ -13,21 +13,49 @@ import RxCocoa
 
 class ZJLoginInViewController: UIViewController {
     
+    @IBOutlet weak var accountField: UITextField!
+    @IBOutlet weak var accountInfoLabel: UILabel!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let viewModel = LoginViewModel.init(input: (userName: accountField.rx.text.orEmpty.asDriver(), password: passwordField.rx.text.orEmpty.asDriver(), loginTaps: loginBtn.rx.tap.asDriver()), service: ValidationService.instance)
+        
+        viewModel.userNameUsable
+            .drive(accountInfoLabel.rx.validationResult)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.loginButtonEnabled
+            .drive(onNext: { [unowned self] valid in
+            self.loginBtn.isEnabled = valid
+            self.loginBtn.alpha = valid ? 1 : 0.5
+            })
+            .addDisposableTo(disposeBag)
        
+        viewModel.loginResult
+            .drive(onNext: { [unowned self] result in
+                switch result{
+                case .empty:
+                    self.showAlert(message: "")
+                case let .ok(message):
+                    print(message)
+                    //开始进行跳转
+                    self.showAlert(message: message)
+                case let .failed(message):
+                    self.showAlert(message: message)
+                }
+        })
+        .addDisposableTo(disposeBag)
     }
     
-    func rxtest() {
-        let a = Variable(1)
-        let b = Variable(2)
-        
-        let c = Observable.combineLatest(a.asObservable(),b.asObservable()){$0 +  $1}
-            .filter{ $0 >= 0}
-            .map{"\($0) is positive"}
-        c.subscribe(onNext:{print($0)}).dispose();
-        //a b 的值改变立刻输出
-        a.value = 4
-        b.value = -8
+    fileprivate func showAlert(message:String) {
+        let action = UIAlertAction.init(title: "确定", style: .default, handler: nil)
+        let alertView = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
+        alertView.addAction(action)
+        present(alertView, animated: true, completion: nil)
     }
+
 }

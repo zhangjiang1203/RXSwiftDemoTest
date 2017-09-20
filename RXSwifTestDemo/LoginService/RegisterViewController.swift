@@ -28,6 +28,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        addRightButtonItem()
         
         let viewModel = RegisterViewModel()
         //绑定输入框
@@ -79,8 +80,26 @@ class RegisterViewController: UIViewController {
         }).addDisposableTo(disposeBag)
     }
     
+    func addRightButtonItem() {
+        let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 30 ))
+        button.titleLabel?.font = .systemFont(ofSize: 15)
+        button.setTitleColor(RGBCOLOR_HEX(h: 0x333333), for: .normal)
+        button.rx.tap
+            .asObservable()
+            .subscribe(onNext: { _ in
+                let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+                let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginin") as! ZJLoginInViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            })
+            .addDisposableTo(disposeBag)
+        button.setTitle("登录", for: .normal)
+        let barButton = UIBarButtonItem.init(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+        
+    }
     
-    func showAlert(message:String) {
+    
+    fileprivate func showAlert(message:String) {
         let action = UIAlertAction.init(title: "确定", style: .default, handler: nil)
         let alertView = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
         alertView.addAction(action)

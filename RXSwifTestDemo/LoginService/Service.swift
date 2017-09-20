@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
 enum Result {
     case ok(message:String)
     case empty
@@ -20,7 +19,7 @@ enum Result {
 class ValidationService {
     static let instance = ValidationService()
     let minCharactersCount = 6
-    
+    let filePath = "/Documents/users.plist"
     private init(){}
     
     //返回一个Observable对象，这个请求过程要被监听
@@ -42,7 +41,7 @@ class ValidationService {
     
     
     func userNameVaild(_ userName:String) -> Bool {
-        let filePath = NSHomeDirectory()+"/Documents/user.plist"
+        let filePath = NSHomeDirectory()+self.filePath
         let userDict = NSDictionary.init(contentsOfFile: filePath)
         if userDict != nil{
             let userNameArr = userDict!.allKeys as NSArray
@@ -79,13 +78,35 @@ class ValidationService {
     
     func registerAccount(userName:String,password:String) -> Observable<Result> {
         let userDict = [userName:password]
-        let filePath = NSHomeDirectory()+"/Documents/users.plist"
+        let filePath = NSHomeDirectory()+self.filePath
         if (userDict as NSDictionary).write(toFile: filePath, atomically: true) {
             return .just(.ok(message:"注册成功"))
         }
         return .just(.failed(message:"注册失败"))
-        
-        
     }
-
+    
+    //MARK: 登录验证
+    func LoginUserNameValid(_ userName:String) -> Observable<Result> {
+        if userName.characters.count == 0 {
+            return .just(.empty);
+        }
+        
+        if userNameVaild(userName) {
+            return .just(.ok(message:"用户名可用"))
+        }
+        
+        return .just(.failed(message: "用户名不存在"))
+    }
+    
+    //开始登录
+    func login(_ userName:String,password:String) -> Observable<Result> {
+        let filePath = NSHomeDirectory()+self.filePath
+        let userDict = NSDictionary.init(contentsOfFile: filePath)
+        if let userPassword = userDict?.object(forKey: userName) as? String {
+            if userPassword == password{
+                return .just(.ok(message:"登录成功"))
+            }
+        }
+        return .just(.failed(message:"密码错误"))
+    }
 }

@@ -13,6 +13,7 @@
 		288437481F71023800CEF434 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437471F71023800CEF434 /* Protocol.swift */; };
 		2884374A1F71024700CEF434 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437491F71024700CEF434 /* Service.swift */; };
 		2884374C1F7104E100CEF434 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884374B1F7104E100CEF434 /* RegisterViewController.swift */; };
+		288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288589971F723EF60047A6AB /* LoginViewModel.swift */; };
 		2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC311F5D243B007ED724 /* AppDelegate.swift */; };
 		2899BC341F5D243B007ED724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC331F5D243B007ED724 /* ViewController.swift */; };
 		2899BC371F5D243B007ED724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2899BC351F5D243B007ED724 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		288437471F71023800CEF434 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		288437491F71024700CEF434 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2884374B1F7104E100CEF434 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		288589971F723EF60047A6AB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2899BC2E1F5D243A007ED724 /* RXSwifTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwifTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2899BC311F5D243B007ED724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2899BC331F5D243B007ED724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				288437471F71023800CEF434 /* Protocol.swift */,
 				288437491F71024700CEF434 /* Service.swift */,
 				2884374B1F7104E100CEF434 /* RegisterViewController.swift */,
+				288589971F723EF60047A6AB /* LoginViewModel.swift */,
 			);
 			path = LoginService;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,
 				288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */,
 				288437481F71023800CEF434 /* Protocol.swift in Sources */,
+				288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */,
 				2884374A1F71024700CEF434 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
