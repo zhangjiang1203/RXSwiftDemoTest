@@ -16,7 +16,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var accoutField: UITextField!
     @IBOutlet weak var accountLabelInfo: UILabel!
     
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordLabelInfo: UILabel!
@@ -45,17 +45,46 @@ class RegisterViewController: UIViewController {
             .bind(to: accountLabelInfo.rx.validationResult)
             .addDisposableTo(disposeBag)
         
-        viewModel.passwordUsable.bind(to: passwordLabelInfo.rx.validationResult).addDisposableTo(disposeBag)
+        viewModel.passwordUsable
+            .bind(to: passwordLabelInfo.rx.validationResult)
+            .addDisposableTo(disposeBag)
         
-        viewModel.passwordUsable.bind(to: confirmPWSField.rx.inputEnable).addDisposableTo(disposeBag)
+        viewModel.passwordUsable
+            .bind(to: confirmPWSField.rx.inputEnable)
+            .addDisposableTo(disposeBag)
         
-        viewModel.repeatPasswordUsable.bind(to: confirmLabelInfo.rx.validationResult).addDisposableTo(disposeBag)
-
+        viewModel.repeatPasswordUsable
+            .bind(to: confirmLabelInfo.rx.validationResult)
+            .addDisposableTo(disposeBag)
+        
+        //注册按钮的绑定
+        registerBtn.rx.tap
+            .bind(to:viewModel.registerTaps)
+            .addDisposableTo(disposeBag)
+        //控制按钮的点击与否
+        viewModel.registerButtonEnabled.subscribe(onNext: { [unowned self] valid in
+            self.registerBtn.isEnabled = valid
+            self.registerBtn.alpha = valid ? 1.0 : 0.5
+        }).addDisposableTo(disposeBag)
+        //按钮的点击事件
+        viewModel.registerResult.subscribe(onNext: { [unowned self] result in
+            switch result{
+            case let .ok(message):
+                self.showAlert(message: message)
+            case .empty:
+                self.showAlert(message: "")
+            case let .failed(message):
+                self.showAlert(message: message)
+            }
+        }).addDisposableTo(disposeBag)
     }
     
     
-    
-
-    
-
+    func showAlert(message:String) {
+        let action = UIAlertAction.init(title: "确定", style: .default, handler: nil)
+        let alertView = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
+        alertView.addAction(action)
+        present(alertView, animated: true, completion: nil)
+        
+    }
 }

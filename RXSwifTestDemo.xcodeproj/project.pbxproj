@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1D1F72186000D0E8A0 /* String+Height.swift */; };
+		287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */; };
 		288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437451F71022700CEF434 /* RegisterViewModel.swift */; };
 		288437481F71023800CEF434 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437471F71023800CEF434 /* Protocol.swift */; };
 		2884374A1F71024700CEF434 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437491F71024700CEF434 /* Service.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		1A1EAC7A4B6212DF6F429045 /* Pods-RXSwifTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwifTestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RXSwifTestDemo/Pods-RXSwifTestDemo.release.xcconfig"; sourceTree = "<group>"; };
+		287C9C1D1F72186000D0E8A0 /* String+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
+		287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJAFRequestTool.swift; sourceTree = "<group>"; };
 		288437451F71022700CEF434 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		288437471F71023800CEF434 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		288437491F71024700CEF434 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -56,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287C9C1C1F72186000D0E8A0 /* SwiftTools */ = {
+			isa = PBXGroup;
+			children = (
+				287C9C1D1F72186000D0E8A0 /* String+Height.swift */,
+				287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */,
+			);
+			path = SwiftTools;
+			sourceTree = "<group>";
+		};
 		288437441F7100FC00CEF434 /* LoginService */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 		2899BC301F5D243A007ED724 /* RXSwifTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				287C9C1C1F72186000D0E8A0 /* SwiftTools */,
 				288437441F7100FC00CEF434 /* LoginService */,
 				2899BC311F5D243B007ED724 /* AppDelegate.swift */,
 				2899BC331F5D243B007ED724 /* ViewController.swift */,
@@ -244,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */,
+				287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */,
+				287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */,
 				2899BC341F5D243B007ED724 /* ViewController.swift in Sources */,
 				2884374C1F7104E100CEF434 /* RegisterViewController.swift in Sources */,
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,

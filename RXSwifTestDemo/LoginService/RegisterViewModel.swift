@@ -21,7 +21,12 @@ class RegisterViewModel {
     
     let passwordUsable :Observable<Result>//密码是否可用
     let repeatPasswordUsable : Observable<Result>//密码确定是否正确
-
+    
+    //注册的输入和输出
+    let registerTaps = PublishSubject<Void>()
+    let registerButtonEnabled :Observable<Bool>
+    let registerResult:Observable<Result>
+    
     
     init() {
         
@@ -30,8 +35,8 @@ class RegisterViewModel {
         userNameAble = username.asObservable()
         .flatMapLatest{ userNmae in
             return service.validataUserName(userNmae)
-            .observeOn(MainScheduler.instance)
-                .catchErrorJustReturn(.failed(message:"username检测出错"))
+                          .observeOn(MainScheduler.instance)
+                          .catchErrorJustReturn(.failed(message:"username检测出错"))
             }
         .shareReplay(1)
         
@@ -42,7 +47,22 @@ class RegisterViewModel {
         repeatPasswordUsable = Observable.combineLatest(password.asObservable(),repeatpassword.asObservable()){
             return service.validateRepeatedPassword(password: $0, repeatPassword: $1)
         }.shareReplay(1)
+        
+        
+        registerButtonEnabled = Observable.combineLatest(userNameAble,passwordUsable,repeatPasswordUsable){(username,password,repeatPassword) in
+             username.isValid && password.isValid && repeatPassword.isValid
+        }.distinctUntilChanged()
+        .shareReplay(1)
+        
+        let usernameAndPassword = Observable.combineLatest(username.asObservable(),password.asObservable()){($0,$1)}
+        
+        registerResult = registerTaps.asObservable()
+            .withLatestFrom(usernameAndPassword)
+            .flatMapLatest{ (username,password)  in
+               return service.registerAccount(userName: username, password: password)
+                             .observeOn(MainScheduler.instance)
+                .catchErrorJustReturn(.failed(message: "注册出错"))
+        }.shareReplay(1)
+  
     }
-    
-    
 }

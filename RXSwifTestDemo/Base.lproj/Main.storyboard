@@ -125,7 +125,7 @@
                                     <constraint firstAttribute="height" constant="40" id="WmI-Vz-i9e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="LoginIn">
+                                <state key="normal" title="RegisterAction">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -208,9 +208,9 @@
                         <outlet property="accoutField" destination="eTM-2B-LUh" id="ggq-cY-S9z"/>
                         <outlet property="confirmLabelInfo" destination="khJ-5r-lm7" id="Yt6-YZ-Acv"/>
                         <outlet property="confirmPWSField" destination="hVf-AZ-fUR" id="Wjk-5f-yKZ"/>
-                        <outlet property="loginBtn" destination="ID0-pD-hPC" id="3WS-P5-hdQ"/>
                         <outlet property="passwordField" destination="HZn-F8-Ed1" id="Wu0-Or-BMJ"/>
                         <outlet property="passwordLabelInfo" destination="yBl-6d-NUc" id="H7e-hc-nh2"/>
+                        <outlet property="registerBtn" destination="ID0-pD-hPC" id="nyU-R5-3Hr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXj-IZ-pzs" userLabel="First Responder" sceneMemberID="firstResponder"/>

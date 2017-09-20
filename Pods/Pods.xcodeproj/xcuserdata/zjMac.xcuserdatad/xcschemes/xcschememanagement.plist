@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>NSObject+Rx.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E66ED31AAE984CCF3EA69AB1B334CAA</key>
+		<key>18F5CFABE99CB6AC1D8C799FAB82C80C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,7 +42,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFC12E6F38345C93FCF168DDCB69788E</key>
+		<key>5F2FC46509E8F6C8EF71BFC386D65332</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
