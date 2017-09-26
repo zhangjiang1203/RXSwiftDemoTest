@@ -35,7 +35,6 @@ class ValidationService {
         if userNameVaild(userName) {
             return .just(.failed(message:"账户已存在"))
         }
-        
         return .just(.ok(message:"用户民可用"))
     }
     
@@ -60,7 +59,6 @@ class ValidationService {
         if password.characters.count < 6 {
             return .failed(message: "密码长度至少6个字符")
         }
-        
         return .ok(message: "密码可用")
     }
     
@@ -72,7 +70,6 @@ class ValidationService {
         if repeatPassword == password {
             return .ok(message: "密码可用")
         }
-        
         return .failed(message: "两次输入密码不一样")
     }
     
@@ -94,7 +91,6 @@ class ValidationService {
         if userNameVaild(userName) {
             return .just(.ok(message:"用户名可用"))
         }
-        
         return .just(.failed(message: "用户名不存在"))
     }
     

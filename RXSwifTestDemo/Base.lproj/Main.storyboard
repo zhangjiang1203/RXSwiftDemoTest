@@ -237,7 +237,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOm-Mt-wN2">
-                                <rect key="frame" x="20" y="196" width="335" height="35"/>
+                                <rect key="frame" x="20" y="226" width="335" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.7843137255" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="hm7-bl-onr"/>
@@ -247,28 +247,40 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W8-zh-ShK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请至少输入六个字符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W8-zh-ShK">
                                 <rect key="frame" x="20" y="88" width="200" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="hmM-EB-3H7"/>
                                     <constraint firstAttribute="width" constant="200" id="zan-A5-kM3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请至少输入六个字符" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIE-Af-WQc">
+                                <rect key="frame" x="20" y="174" width="335" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="rnb-Zf-aaO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="zIE-Af-WQc" secondAttribute="trailing" constant="20" id="ChG-Lt-XG7"/>
                             <constraint firstAttribute="trailing" secondItem="xfV-1u-TfN" secondAttribute="trailing" constant="20" id="DYR-e3-w5H"/>
+                            <constraint firstItem="zIE-Af-WQc" firstAttribute="leading" secondItem="xfV-1u-TfN" secondAttribute="leading" id="Lqb-mc-8v6"/>
                             <constraint firstItem="1W8-zh-ShK" firstAttribute="top" secondItem="PGc-pP-PYf" secondAttribute="bottom" constant="8" id="OSh-ap-8LM"/>
                             <constraint firstItem="xfV-1u-TfN" firstAttribute="leading" secondItem="iLo-pE-Vpd" secondAttribute="leading" constant="20" id="XVv-IY-DdE"/>
                             <constraint firstAttribute="trailing" secondItem="PGc-pP-PYf" secondAttribute="trailing" constant="20" id="YVE-Dn-bOK"/>
                             <constraint firstAttribute="trailing" secondItem="gOm-Mt-wN2" secondAttribute="trailing" constant="20" id="ddp-gR-PWa"/>
+                            <constraint firstItem="zIE-Af-WQc" firstAttribute="top" secondItem="xfV-1u-TfN" secondAttribute="bottom" constant="8" id="hk0-f9-0Z2"/>
                             <constraint firstItem="xfV-1u-TfN" firstAttribute="top" secondItem="1W8-zh-ShK" secondAttribute="bottom" constant="30" id="kfw-68-hhD"/>
                             <constraint firstItem="gOm-Mt-wN2" firstAttribute="leading" secondItem="iLo-pE-Vpd" secondAttribute="leading" constant="20" id="pkx-ge-MMt"/>
                             <constraint firstItem="1W8-zh-ShK" firstAttribute="leading" secondItem="PGc-pP-PYf" secondAttribute="leading" id="qAi-UJ-AE2"/>
-                            <constraint firstItem="gOm-Mt-wN2" firstAttribute="top" secondItem="xfV-1u-TfN" secondAttribute="bottom" constant="30" id="sU0-l6-ICl"/>
+                            <constraint firstItem="gOm-Mt-wN2" firstAttribute="top" secondItem="xfV-1u-TfN" secondAttribute="bottom" constant="60" id="sU0-l6-ICl"/>
                             <constraint firstItem="PGc-pP-PYf" firstAttribute="top" secondItem="Mbd-wd-yp6" secondAttribute="bottom" constant="30" id="xpn-iE-G9i"/>
                             <constraint firstItem="PGc-pP-PYf" firstAttribute="leading" secondItem="iLo-pE-Vpd" secondAttribute="leading" constant="20" id="yvq-am-Y1t"/>
                         </constraints>
@@ -279,6 +291,7 @@
                         <outlet property="accountInfoLabel" destination="1W8-zh-ShK" id="k4r-K8-yuF"/>
                         <outlet property="loginBtn" destination="gOm-Mt-wN2" id="6zO-C6-FLj"/>
                         <outlet property="passwordField" destination="xfV-1u-TfN" id="hPF-QU-jEy"/>
+                        <outlet property="passwordInfoLabel" destination="zIE-Af-WQc" id="GdB-lT-fTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8V-b5-Whk" userLabel="First Responder" sceneMemberID="firstResponder"/>
