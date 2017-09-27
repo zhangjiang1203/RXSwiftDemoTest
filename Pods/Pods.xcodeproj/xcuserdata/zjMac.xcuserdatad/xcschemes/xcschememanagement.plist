@@ -24,39 +24,23 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RxDataSources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RxSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Then.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>18F5CFABE99CB6AC1D8C799FAB82C80C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1AC8241078D064BE382DB1DD864A5819</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5F2FC46509E8F6C8EF71BFC386D65332</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C7EC37247077041FDAD1F4FEB9536DFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

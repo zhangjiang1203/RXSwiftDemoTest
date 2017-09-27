@@ -105,6 +105,7 @@
 		2899BC301F5D243A007ED724 /* RXSwifTestDemo */ = {
 			isa = PBXGroup;
 			children = (
+				289D34DB1F7BA54000F3A567 /* RXTestCopy */,
 				287C9C1C1F72186000D0E8A0 /* SwiftTools */,
 				288437441F7100FC00CEF434 /* LoginService */,
 				2899BC311F5D243B007ED724 /* AppDelegate.swift */,
@@ -115,6 +116,13 @@
 				2899BC3D1F5D243C007ED724 /* Info.plist */,
 			);
 			path = RXSwifTestDemo;
+			sourceTree = "<group>";
+		};
+		289D34DB1F7BA54000F3A567 /* RXTestCopy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RXTestCopy;
 			sourceTree = "<group>";
 		};
 		54C100911E565B267E53F3F5 /* Frameworks */ = {

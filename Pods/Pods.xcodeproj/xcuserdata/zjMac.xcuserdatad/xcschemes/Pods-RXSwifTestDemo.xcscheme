@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "18F5CFABE99CB6AC1D8C799FAB82C80C"
+               BlueprintIdentifier = "E4187B47A464C8C95B9C3FCA41DCBA8D"
                BuildableName = "Pods_RXSwifTestDemo.framework"
                BlueprintName = "Pods-RXSwifTestDemo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18F5CFABE99CB6AC1D8C799FAB82C80C"
+            BlueprintIdentifier = "E4187B47A464C8C95B9C3FCA41DCBA8D"
             BuildableName = "Pods_RXSwifTestDemo.framework"
             BlueprintName = "Pods-RXSwifTestDemo"
             ReferencedContainer = "container:Pods.xcodeproj">
