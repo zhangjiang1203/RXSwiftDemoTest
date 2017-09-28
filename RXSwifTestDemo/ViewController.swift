@@ -22,6 +22,11 @@ class ViewController: UITableViewController {
         mergeTest()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //开始跳转
+        
+    }
+    
     func replayTest()  {
         let testReplay = Observable.just("haha").map{print($0)}.shareReplay(4)
         //map中的代码只执行一遍
