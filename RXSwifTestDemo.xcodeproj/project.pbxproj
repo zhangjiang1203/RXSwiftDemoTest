@@ -14,6 +14,11 @@
 		288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398651F7C928A0030C37F /* AddNumStory.storyboard */; };
 		288398691F7CBC460030C37F /* SimpleValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398681F7CBC460030C37F /* SimpleValidation.storyboard */; };
 		2883986D1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883986C1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift */; };
+		288398721F7CD1090030C37F /* ZJGithubDriving.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398711F7CD1090030C37F /* ZJGithubDriving.storyboard */; };
+		288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398731F7CD11A0030C37F /* ZJGithubObserver.storyboard */; };
+		288398761F7CD1330030C37F /* ZJDriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288398751F7CD1330030C37F /* ZJDriverViewController.swift */; };
+		288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288398781F7CD14C0030C37F /* ZJObserverViewController.swift */; };
+		2883987B1F7CD8F60030C37F /* ZJSignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2883987A1F7CD8F60030C37F /* ZJSignUpProtocols.swift */; };
 		288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437451F71022700CEF434 /* RegisterViewModel.swift */; };
 		288437481F71023800CEF434 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437471F71023800CEF434 /* Protocol.swift */; };
 		2884374A1F71024700CEF434 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437491F71024700CEF434 /* Service.swift */; };
@@ -39,6 +44,11 @@
 		288398651F7C928A0030C37F /* AddNumStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNumStory.storyboard; sourceTree = "<group>"; };
 		288398681F7CBC460030C37F /* SimpleValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleValidation.storyboard; sourceTree = "<group>"; };
 		2883986C1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJSimpleValidViewController.swift; sourceTree = "<group>"; };
+		288398711F7CD1090030C37F /* ZJGithubDriving.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZJGithubDriving.storyboard; sourceTree = "<group>"; };
+		288398731F7CD11A0030C37F /* ZJGithubObserver.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZJGithubObserver.storyboard; sourceTree = "<group>"; };
+		288398751F7CD1330030C37F /* ZJDriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJDriverViewController.swift; sourceTree = "<group>"; };
+		288398781F7CD14C0030C37F /* ZJObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJObserverViewController.swift; sourceTree = "<group>"; };
+		2883987A1F7CD8F60030C37F /* ZJSignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJSignUpProtocols.swift; sourceTree = "<group>"; };
 		288437451F71022700CEF434 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		288437471F71023800CEF434 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		288437491F71024700CEF434 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -99,6 +109,34 @@
 			path = "Simple Validation";
 			sourceTree = "<group>";
 		};
+		2883986E1F7CD05B0030C37F /* GitHubSignup */ = {
+			isa = PBXGroup;
+			children = (
+				288398701F7CD0DA0030C37F /* Driver */,
+				2883986F1F7CD0C60030C37F /* Obvservables */,
+				2883987A1F7CD8F60030C37F /* ZJSignUpProtocols.swift */,
+			);
+			path = GitHubSignup;
+			sourceTree = "<group>";
+		};
+		2883986F1F7CD0C60030C37F /* Obvservables */ = {
+			isa = PBXGroup;
+			children = (
+				288398731F7CD11A0030C37F /* ZJGithubObserver.storyboard */,
+				288398781F7CD14C0030C37F /* ZJObserverViewController.swift */,
+			);
+			path = Obvservables;
+			sourceTree = "<group>";
+		};
+		288398701F7CD0DA0030C37F /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				288398711F7CD1090030C37F /* ZJGithubDriving.storyboard */,
+				288398751F7CD1330030C37F /* ZJDriverViewController.swift */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
 		288437441F7100FC00CEF434 /* LoginService */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +188,7 @@
 		289D34DB1F7BA54000F3A567 /* RXTestCopy */ = {
 			isa = PBXGroup;
 			children = (
+				2883986E1F7CD05B0030C37F /* GitHubSignup */,
 				288398671F7CA2380030C37F /* Simple Validation */,
 				288398621F7C92350030C37F /* AddNumber */,
 			);
@@ -239,11 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				283F9C5A1F7C8F5400D0F515 /* TestLogin.storyboard in Resources */,
+				288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */,
 				288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */,
 				2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */,
 				2899BC391F5D243B007ED724 /* Assets.xcassets in Resources */,
 				2899BC371F5D243B007ED724 /* Main.storyboard in Resources */,
 				288398691F7CBC460030C37F /* SimpleValidation.storyboard in Resources */,
+				288398721F7CD1090030C37F /* ZJGithubDriving.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +345,7 @@
 			files = (
 				2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */,
 				287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */,
+				2883987B1F7CD8F60030C37F /* ZJSignUpProtocols.swift in Sources */,
 				287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */,
 				2883986D1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift in Sources */,
 				2899BC341F5D243B007ED724 /* ViewController.swift in Sources */,
@@ -312,8 +354,10 @@
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,
 				288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */,
 				288437481F71023800CEF434 /* Protocol.swift in Sources */,
+				288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */,
 				288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */,
 				2884374A1F71024700CEF434 /* Service.swift in Sources */,
+				288398761F7CD1330030C37F /* ZJDriverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

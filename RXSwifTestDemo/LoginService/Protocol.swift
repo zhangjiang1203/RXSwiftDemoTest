@@ -48,7 +48,6 @@ extension Result{
             return UIColor.red
         }
     }
-    
 }
 
 extension Reactive where Base :UILabel{
