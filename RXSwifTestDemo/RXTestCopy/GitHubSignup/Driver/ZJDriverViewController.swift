@@ -36,8 +36,8 @@ class ZJDriverViewController: UIViewController {
         //开始绑定
         let driver = DriverLoginMode.init(input: (
             userName:accontField.rx.text.orEmpty.asDriver(),
-            password: accontField.rx.text.orEmpty.asDriver(),
-            confirm: accontField.rx.text.orEmpty.asDriver(),
+            password: passwordField.rx.text.orEmpty.asDriver(),
+            confirm: repeatField.rx.text.orEmpty.asDriver(),
             signAble: signUpBtn.rx.tap.asDriver()))
         
         driver.userNameValid.drive(accountLabel.rx.loginResult).disposed(by:disposeBag)
