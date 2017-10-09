@@ -30,8 +30,12 @@
 		2899BC391F5D243B007ED724 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2899BC381F5D243B007ED724 /* Assets.xcassets */; };
 		2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2899BC3A1F5D243C007ED724 /* LaunchScreen.storyboard */; };
 		2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC431F5D2602007ED724 /* ZJLoginInViewController.swift */; };
+		289E33E11F8B6A9F00FE7D1C /* BindValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E33E01F8B6A9F00FE7D1C /* BindValidationExtension.swift */; };
+		289E33E31F8B75E900FE7D1C /* DriverLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E33E21F8B75E900FE7D1C /* DriverLoginModel.swift */; };
 		28AC0D021F667E2A0099A279 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AC0D001F667E2A0099A279 /* RxCocoa.framework */; };
 		28AC0D031F667E2A0099A279 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AC0D011F667E2A0099A279 /* RxSwift.framework */; };
+		28C022321F8B4C590008FBBA /* ObservableLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */; };
+		28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C022331F8B51090008FBBA /* ValidationAbleService.swift */; };
 		2E5B004A7B1049560A5B09AD /* Pods_RXSwifTestDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4666AE27A69A2E2D3C55EC /* Pods_RXSwifTestDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +66,12 @@
 		2899BC3B1F5D243C007ED724 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2899BC3D1F5D243C007ED724 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2899BC431F5D2602007ED724 /* ZJLoginInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJLoginInViewController.swift; sourceTree = "<group>"; };
+		289E33E01F8B6A9F00FE7D1C /* BindValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindValidationExtension.swift; sourceTree = "<group>"; };
+		289E33E21F8B75E900FE7D1C /* DriverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLoginModel.swift; sourceTree = "<group>"; };
 		28AC0D001F667E2A0099A279 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/RXSwifTestDemo-bqwewuxuymrkmuffhistntskrzth/Build/Products/Debug-iphoneos/RxCocoa/RxCocoa.framework"; sourceTree = "<group>"; };
 		28AC0D011F667E2A0099A279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/RXSwifTestDemo-bqwewuxuymrkmuffhistntskrzth/Build/Products/Debug-iphoneos/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
+		28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableLoginModel.swift; sourceTree = "<group>"; };
+		28C022331F8B51090008FBBA /* ValidationAbleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAbleService.swift; sourceTree = "<group>"; };
 		3CC5FF772988DD5F55764505 /* Pods-RXSwifTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwifTestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RXSwifTestDemo/Pods-RXSwifTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4666AE27A69A2E2D3C55EC /* Pods_RXSwifTestDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXSwifTestDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -115,6 +123,8 @@
 				288398701F7CD0DA0030C37F /* Driver */,
 				2883986F1F7CD0C60030C37F /* Obvservables */,
 				2883987A1F7CD8F60030C37F /* ZJSignUpProtocols.swift */,
+				28C022331F8B51090008FBBA /* ValidationAbleService.swift */,
+				289E33E01F8B6A9F00FE7D1C /* BindValidationExtension.swift */,
 			);
 			path = GitHubSignup;
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 			children = (
 				288398731F7CD11A0030C37F /* ZJGithubObserver.storyboard */,
 				288398781F7CD14C0030C37F /* ZJObserverViewController.swift */,
+				28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */,
 			);
 			path = Obvservables;
 			sourceTree = "<group>";
@@ -133,6 +144,7 @@
 			children = (
 				288398711F7CD1090030C37F /* ZJGithubDriving.storyboard */,
 				288398751F7CD1330030C37F /* ZJDriverViewController.swift */,
+				289E33E21F8B75E900FE7D1C /* DriverLoginModel.swift */,
 			);
 			path = Driver;
 			sourceTree = "<group>";
@@ -346,11 +358,15 @@
 				2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */,
 				287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */,
 				2883987B1F7CD8F60030C37F /* ZJSignUpProtocols.swift in Sources */,
+				289E33E11F8B6A9F00FE7D1C /* BindValidationExtension.swift in Sources */,
 				287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */,
+				28C022321F8B4C590008FBBA /* ObservableLoginModel.swift in Sources */,
 				2883986D1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift in Sources */,
 				2899BC341F5D243B007ED724 /* ViewController.swift in Sources */,
+				289E33E31F8B75E900FE7D1C /* DriverLoginModel.swift in Sources */,
 				2884374C1F7104E100CEF434 /* RegisterViewController.swift in Sources */,
 				288398641F7C92580030C37F /* ZJAddNumViewController.swift in Sources */,
+				28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */,
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,
 				288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */,
 				288437481F71023800CEF434 /* Protocol.swift in Sources */,

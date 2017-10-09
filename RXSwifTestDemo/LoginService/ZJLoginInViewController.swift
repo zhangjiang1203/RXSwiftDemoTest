@@ -19,7 +19,6 @@ class ZJLoginInViewController: UIViewController {
     
     @IBOutlet weak var passwordInfoLabel: UILabel!
     
-    
     @IBOutlet weak var loginBtn: UIButton!
     let disposeBag = DisposeBag()
     
@@ -75,7 +74,6 @@ class ZJLoginInViewController: UIViewController {
         let loginObserver = Observable.combineLatest(accountValid,passwordValid){(account,password) in
             account && password
         }
-        
         //绑定按钮
         loginObserver.bind(to: loginBtn.rx.isEnabled).addDisposableTo(disposeBag)
         

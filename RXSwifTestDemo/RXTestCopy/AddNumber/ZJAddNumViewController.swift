@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
 class ZJAddNumViewController: UIViewController {
     
     @IBOutlet weak var num1Field: UITextField!

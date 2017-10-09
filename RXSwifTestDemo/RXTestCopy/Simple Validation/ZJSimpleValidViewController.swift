@@ -33,7 +33,7 @@ class ZJSimpleValidViewController: UIViewController {
         accountValid.bind(to: accountLabel.rx.isHidden).addDisposableTo(disposeBag)
         //当输入了账号之后才能输入密码
         accountValid.bind(to: passwordField.rx.isEnabled).addDisposableTo(disposeBag)
-        
+        //密码是否符合
         let passwordValid = passwordField.rx.text.orEmpty.map {
             return $0.characters.count >= 6
         }.shareReplay(1)
@@ -49,7 +49,7 @@ class ZJSimpleValidViewController: UIViewController {
         }).addDisposableTo(disposeBag)
         
         //添加添加事件
-        loginBtn.rx.tap.subscribe(onNext:{[unowned self]_ in
+        loginBtn.rx.tap.subscribe(onNext:{[unowned self] _ in
             //开始登录
             self.view.endEditing(true)
             self.showAlert()
@@ -64,5 +64,4 @@ class ZJSimpleValidViewController: UIViewController {
         alertView.addAction(confirmBtn)
         present(alertView, animated: true, completion: nil)
     }
-
 }

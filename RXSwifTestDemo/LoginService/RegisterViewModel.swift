@@ -27,11 +27,8 @@ class RegisterViewModel {
     let registerButtonEnabled :Observable<Bool>
     let registerResult:Observable<Result>
     
-    
     init() {
-        
         let service = ValidationService.instance
-        
         userNameAble = username.asObservable()
         .flatMapLatest{ userNmae in
             return service.validataUserName(userNmae)
@@ -48,7 +45,6 @@ class RegisterViewModel {
             return service.validateRepeatedPassword(password: $0, repeatPassword: $1)
         }.shareReplay(1)
         
-        
         registerButtonEnabled = Observable.combineLatest(userNameAble,passwordUsable,repeatPasswordUsable){(username,password,repeatPassword) in
              username.isValid && password.isValid && repeatPassword.isValid
         }.distinctUntilChanged()
@@ -63,6 +59,5 @@ class RegisterViewModel {
                              .observeOn(MainScheduler.instance)
                 .catchErrorJustReturn(.failed(message: "注册出错"))
         }.shareReplay(1)
-  
     }
 }

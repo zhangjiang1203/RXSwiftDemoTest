@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-
+import RxSwift
+import RxCocoa
 
 /// 定义一个枚举
 enum ValidationResult {
@@ -17,7 +17,6 @@ enum ValidationResult {
     case empty
     case validating
 }
-
 
 /// MARK: - 是否可用
 extension ValidationResult{
@@ -44,9 +43,30 @@ extension ValidationResult{
             return "验证中……"
         }
     }
-    
 }
 
-class ZJSignUpProtocols {
-
+extension ValidationResult{
+    var textColor:UIColor{
+        switch self {
+        case .ok:
+            return UIColor.init(red: 138/255.0, green: 221/255.0, blue: 100/255.0, alpha: 1)
+        case .empty:
+            return UIColor.black
+        case .fail:
+            return UIColor.red
+        default:
+            return UIColor.init(red: 138/255.0, green: 221/255.0, blue: 100/255.0, alpha: 1)
+        }
+    }
 }
+
+
+extension Reactive where Base :UILabel{
+    var loginResult :UIBindingObserver<Base,ValidationResult>{
+        return UIBindingObserver.init(UIElement: base, binding: { (label, result) in
+            label.textColor = result.textColor
+            label.text = result.description
+        })
+    }
+}
+

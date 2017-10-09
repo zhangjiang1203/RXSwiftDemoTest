@@ -5,7 +5,6 @@
 //  Created by DFHZ on 2017/9/19.
 //  Copyright © 2017年 DFHZ. All rights reserved.
 //
-
 import UIKit
 import RxSwift
 import RxCocoa
@@ -35,9 +34,8 @@ class ValidationService {
         if userNameVaild(userName) {
             return .just(.failed(message:"账户已存在"))
         }
-        return .just(.ok(message:"用户民可用"))
+        return .just(.ok(message:"用户名可用"))
     }
-    
     
     func userNameVaild(_ userName:String) -> Bool {
         let filePath = NSHomeDirectory()+self.filePath
