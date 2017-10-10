@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		283F9C5A1F7C8F5400D0F515 /* TestLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283F9C591F7C8F5400D0F515 /* TestLogin.storyboard */; };
+		284B7D331F8C9F8E00B4CFB4 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B7D321F8C9F8E00B4CFB4 /* CalculatorModel.swift */; };
+		284B7D351F8CB17D00B4CFB4 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B7D341F8CB17C00B4CFB4 /* Observable+Extensions.swift */; };
+		284B7D381F8CC14500B4CFB4 /* SimpleTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 284B7D371F8CC14500B4CFB4 /* SimpleTableView.storyboard */; };
+		284B7D3A1F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284B7D391F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift */; };
 		287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1D1F72186000D0E8A0 /* String+Height.swift */; };
 		287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */; };
 		287EE90D1F8C5C1000AF71E9 /* APIWrapper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287EE90C1F8C5C1000AF71E9 /* APIWrapper.storyboard */; };
@@ -47,6 +51,10 @@
 /* Begin PBXFileReference section */
 		1A1EAC7A4B6212DF6F429045 /* Pods-RXSwifTestDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwifTestDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RXSwifTestDemo/Pods-RXSwifTestDemo.release.xcconfig"; sourceTree = "<group>"; };
 		283F9C591F7C8F5400D0F515 /* TestLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestLogin.storyboard; sourceTree = "<group>"; };
+		284B7D321F8C9F8E00B4CFB4 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		284B7D341F8CB17C00B4CFB4 /* Observable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
+		284B7D371F8CC14500B4CFB4 /* SimpleTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleTableView.storyboard; sourceTree = "<group>"; };
+		284B7D391F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJSimpleTableViewController.swift; sourceTree = "<group>"; };
 		287C9C1D1F72186000D0E8A0 /* String+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
 		287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJAFRequestTool.swift; sourceTree = "<group>"; };
 		287EE90C1F8C5C1000AF71E9 /* APIWrapper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APIWrapper.storyboard; sourceTree = "<group>"; };
@@ -100,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		284B7D361F8CC12A00B4CFB4 /* SimpleTableView */ = {
+			isa = PBXGroup;
+			children = (
+				284B7D371F8CC14500B4CFB4 /* SimpleTableView.storyboard */,
+				284B7D391F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift */,
+			);
+			path = SimpleTableView;
+			sourceTree = "<group>";
+		};
 		287C9C1C1F72186000D0E8A0 /* SwiftTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +140,7 @@
 			children = (
 				287EE9131F8C6C7C00AF71E9 /* ZJCalculator.storyboard */,
 				287EE9151F8C6CA600AF71E9 /* ZJCalculatorViewController.swift */,
+				284B7D321F8C9F8E00B4CFB4 /* CalculatorModel.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -217,6 +235,7 @@
 				288437441F7100FC00CEF434 /* LoginService */,
 				2899BC311F5D243B007ED724 /* AppDelegate.swift */,
 				2899BC331F5D243B007ED724 /* ViewController.swift */,
+				284B7D341F8CB17C00B4CFB4 /* Observable+Extensions.swift */,
 				287EE9171F8C71A700AF71E9 /* Operators.swift */,
 				2899BC351F5D243B007ED724 /* Main.storyboard */,
 				2899BC381F5D243B007ED724 /* Assets.xcassets */,
@@ -229,6 +248,7 @@
 		289D34DB1F7BA54000F3A567 /* RXTestCopy */ = {
 			isa = PBXGroup;
 			children = (
+				284B7D361F8CC12A00B4CFB4 /* SimpleTableView */,
 				287EE9101F8C6B7400AF71E9 /* Calculator */,
 				287EE90B1F8C5BE200AF71E9 /* APIWrapper */,
 				2883986E1F7CD05B0030C37F /* GitHubSignup */,
@@ -321,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				283F9C5A1F7C8F5400D0F515 /* TestLogin.storyboard in Resources */,
+				284B7D381F8CC14500B4CFB4 /* SimpleTableView.storyboard in Resources */,
 				288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */,
 				288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */,
 				2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */,
@@ -397,6 +418,7 @@
 				2883986D1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift in Sources */,
 				2899BC341F5D243B007ED724 /* ViewController.swift in Sources */,
 				289E33E31F8B75E900FE7D1C /* DriverLoginModel.swift in Sources */,
+				284B7D331F8C9F8E00B4CFB4 /* CalculatorModel.swift in Sources */,
 				2884374C1F7104E100CEF434 /* RegisterViewController.swift in Sources */,
 				288398641F7C92580030C37F /* ZJAddNumViewController.swift in Sources */,
 				28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */,
@@ -409,7 +431,9 @@
 				288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */,
 				288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */,
 				2884374A1F71024700CEF434 /* Service.swift in Sources */,
+				284B7D351F8CB17D00B4CFB4 /* Observable+Extensions.swift in Sources */,
 				288398761F7CD1330030C37F /* ZJDriverViewController.swift in Sources */,
+				284B7D3A1F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
