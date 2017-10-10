@@ -10,6 +10,11 @@
 		283F9C5A1F7C8F5400D0F515 /* TestLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283F9C591F7C8F5400D0F515 /* TestLogin.storyboard */; };
 		287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1D1F72186000D0E8A0 /* String+Height.swift */; };
 		287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */; };
+		287EE90D1F8C5C1000AF71E9 /* APIWrapper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287EE90C1F8C5C1000AF71E9 /* APIWrapper.storyboard */; };
+		287EE90F1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EE90E1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift */; };
+		287EE9141F8C6C7C00AF71E9 /* ZJCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287EE9131F8C6C7C00AF71E9 /* ZJCalculator.storyboard */; };
+		287EE9161F8C6CA600AF71E9 /* ZJCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EE9151F8C6CA600AF71E9 /* ZJCalculatorViewController.swift */; };
+		287EE9181F8C71A700AF71E9 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EE9171F8C71A700AF71E9 /* Operators.swift */; };
 		288398641F7C92580030C37F /* ZJAddNumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288398631F7C92580030C37F /* ZJAddNumViewController.swift */; };
 		288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398651F7C928A0030C37F /* AddNumStory.storyboard */; };
 		288398691F7CBC460030C37F /* SimpleValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 288398681F7CBC460030C37F /* SimpleValidation.storyboard */; };
@@ -44,6 +49,11 @@
 		283F9C591F7C8F5400D0F515 /* TestLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestLogin.storyboard; sourceTree = "<group>"; };
 		287C9C1D1F72186000D0E8A0 /* String+Height.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
 		287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJAFRequestTool.swift; sourceTree = "<group>"; };
+		287EE90C1F8C5C1000AF71E9 /* APIWrapper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = APIWrapper.storyboard; sourceTree = "<group>"; };
+		287EE90E1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJAPIWrapperViewController.swift; sourceTree = "<group>"; };
+		287EE9131F8C6C7C00AF71E9 /* ZJCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ZJCalculator.storyboard; sourceTree = "<group>"; };
+		287EE9151F8C6CA600AF71E9 /* ZJCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJCalculatorViewController.swift; sourceTree = "<group>"; };
+		287EE9171F8C71A700AF71E9 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		288398631F7C92580030C37F /* ZJAddNumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJAddNumViewController.swift; sourceTree = "<group>"; };
 		288398651F7C928A0030C37F /* AddNumStory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNumStory.storyboard; sourceTree = "<group>"; };
 		288398681F7CBC460030C37F /* SimpleValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SimpleValidation.storyboard; sourceTree = "<group>"; };
@@ -97,6 +107,24 @@
 				287C9C1E1F72186000D0E8A0 /* ZJAFRequestTool.swift */,
 			);
 			path = SwiftTools;
+			sourceTree = "<group>";
+		};
+		287EE90B1F8C5BE200AF71E9 /* APIWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				287EE90C1F8C5C1000AF71E9 /* APIWrapper.storyboard */,
+				287EE90E1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift */,
+			);
+			path = APIWrapper;
+			sourceTree = "<group>";
+		};
+		287EE9101F8C6B7400AF71E9 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				287EE9131F8C6C7C00AF71E9 /* ZJCalculator.storyboard */,
+				287EE9151F8C6CA600AF71E9 /* ZJCalculatorViewController.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		288398621F7C92350030C37F /* AddNumber */ = {
@@ -189,6 +217,7 @@
 				288437441F7100FC00CEF434 /* LoginService */,
 				2899BC311F5D243B007ED724 /* AppDelegate.swift */,
 				2899BC331F5D243B007ED724 /* ViewController.swift */,
+				287EE9171F8C71A700AF71E9 /* Operators.swift */,
 				2899BC351F5D243B007ED724 /* Main.storyboard */,
 				2899BC381F5D243B007ED724 /* Assets.xcassets */,
 				2899BC3A1F5D243C007ED724 /* LaunchScreen.storyboard */,
@@ -200,6 +229,8 @@
 		289D34DB1F7BA54000F3A567 /* RXTestCopy */ = {
 			isa = PBXGroup;
 			children = (
+				287EE9101F8C6B7400AF71E9 /* Calculator */,
+				287EE90B1F8C5BE200AF71E9 /* APIWrapper */,
 				2883986E1F7CD05B0030C37F /* GitHubSignup */,
 				288398671F7CA2380030C37F /* Simple Validation */,
 				288398621F7C92350030C37F /* AddNumber */,
@@ -293,7 +324,9 @@
 				288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */,
 				288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */,
 				2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */,
+				287EE90D1F8C5C1000AF71E9 /* APIWrapper.storyboard in Resources */,
 				2899BC391F5D243B007ED724 /* Assets.xcassets in Resources */,
+				287EE9141F8C6C7C00AF71E9 /* ZJCalculator.storyboard in Resources */,
 				2899BC371F5D243B007ED724 /* Main.storyboard in Resources */,
 				288398691F7CBC460030C37F /* SimpleValidation.storyboard in Resources */,
 				288398721F7CD1090030C37F /* ZJGithubDriving.storyboard in Resources */,
@@ -369,7 +402,10 @@
 				28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */,
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,
 				288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */,
+				287EE9161F8C6CA600AF71E9 /* ZJCalculatorViewController.swift in Sources */,
+				287EE90F1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift in Sources */,
 				288437481F71023800CEF434 /* Protocol.swift in Sources */,
+				287EE9181F8C71A700AF71E9 /* Operators.swift in Sources */,
 				288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */,
 				288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */,
 				2884374A1F71024700CEF434 /* Service.swift in Sources */,

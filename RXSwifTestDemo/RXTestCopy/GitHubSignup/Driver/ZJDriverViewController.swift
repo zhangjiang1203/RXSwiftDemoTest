@@ -38,7 +38,8 @@ class ZJDriverViewController: UIViewController {
             userName:accontField.rx.text.orEmpty.asDriver(),
             password: passwordField.rx.text.orEmpty.asDriver(),
             confirm: repeatField.rx.text.orEmpty.asDriver(),
-            signAble: signUpBtn.rx.tap.asDriver()))
+            signAble: signUpBtn.rx.tap.asDriver()
+        ))
         
         driver.userNameValid.drive(accountLabel.rx.loginResult).disposed(by:disposeBag)
         driver.passwordValid.drive(passwordLabel.rx.loginResult).disposed(by: disposeBag)
@@ -53,5 +54,4 @@ class ZJDriverViewController: UIViewController {
             print("开始点击===driver")
         }
     }
-
 }
