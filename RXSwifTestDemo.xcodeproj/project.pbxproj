@@ -33,6 +33,10 @@
 		2884374A1F71024700CEF434 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288437491F71024700CEF434 /* Service.swift */; };
 		2884374C1F7104E100CEF434 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2884374B1F7104E100CEF434 /* RegisterViewController.swift */; };
 		288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288589971F723EF60047A6AB /* LoginViewModel.swift */; };
+		2889487D1F8DBE810019A5DC /* EditTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2889487C1F8DBE810019A5DC /* EditTableView.storyboard */; };
+		2889487F1F8DBE9F0019A5DC /* ZJEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */; };
+		288948811F8DC1760019A5DC /* RandomUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288948801F8DC1760019A5DC /* RandomUserAPI.swift */; };
+		288948831F8DC1860019A5DC /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288948821F8DC1860019A5DC /* Users.swift */; };
 		2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC311F5D243B007ED724 /* AppDelegate.swift */; };
 		2899BC341F5D243B007ED724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC331F5D243B007ED724 /* ViewController.swift */; };
 		2899BC371F5D243B007ED724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2899BC351F5D243B007ED724 /* Main.storyboard */; };
@@ -41,6 +45,8 @@
 		2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC431F5D2602007ED724 /* ZJLoginInViewController.swift */; };
 		289E33E11F8B6A9F00FE7D1C /* BindValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E33E01F8B6A9F00FE7D1C /* BindValidationExtension.swift */; };
 		289E33E31F8B75E900FE7D1C /* DriverLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E33E21F8B75E900FE7D1C /* DriverLoginModel.swift */; };
+		289F51A21F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289F51A11F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift */; };
+		289F51A41F8DAAE400D95FD2 /* SectionTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289F51A31F8DAAE400D95FD2 /* SectionTableView.storyboard */; };
 		28AC0D021F667E2A0099A279 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AC0D001F667E2A0099A279 /* RxCocoa.framework */; };
 		28AC0D031F667E2A0099A279 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AC0D011F667E2A0099A279 /* RxSwift.framework */; };
 		28C022321F8B4C590008FBBA /* ObservableLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */; };
@@ -76,6 +82,10 @@
 		288437491F71024700CEF434 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2884374B1F7104E100CEF434 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		288589971F723EF60047A6AB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2889487C1F8DBE810019A5DC /* EditTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTableView.storyboard; sourceTree = "<group>"; };
+		2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJEditTableViewController.swift; sourceTree = "<group>"; };
+		288948801F8DC1760019A5DC /* RandomUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPI.swift; sourceTree = "<group>"; };
+		288948821F8DC1860019A5DC /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		2899BC2E1F5D243A007ED724 /* RXSwifTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwifTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2899BC311F5D243B007ED724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2899BC331F5D243B007ED724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +96,8 @@
 		2899BC431F5D2602007ED724 /* ZJLoginInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZJLoginInViewController.swift; sourceTree = "<group>"; };
 		289E33E01F8B6A9F00FE7D1C /* BindValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindValidationExtension.swift; sourceTree = "<group>"; };
 		289E33E21F8B75E900FE7D1C /* DriverLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverLoginModel.swift; sourceTree = "<group>"; };
+		289F51A11F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSectionTableViewController.swift; sourceTree = "<group>"; };
+		289F51A31F8DAAE400D95FD2 /* SectionTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SectionTableView.storyboard; sourceTree = "<group>"; };
 		28AC0D001F667E2A0099A279 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/RXSwifTestDemo-bqwewuxuymrkmuffhistntskrzth/Build/Products/Debug-iphoneos/RxCocoa/RxCocoa.framework"; sourceTree = "<group>"; };
 		28AC0D011F667E2A0099A279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/RXSwifTestDemo-bqwewuxuymrkmuffhistntskrzth/Build/Products/Debug-iphoneos/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableLoginModel.swift; sourceTree = "<group>"; };
@@ -209,6 +221,17 @@
 			path = LoginService;
 			sourceTree = "<group>";
 		};
+		2889487B1F8DBE0C0019A5DC /* TableviewWithEdit */ = {
+			isa = PBXGroup;
+			children = (
+				2889487C1F8DBE810019A5DC /* EditTableView.storyboard */,
+				2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */,
+				288948801F8DC1760019A5DC /* RandomUserAPI.swift */,
+				288948821F8DC1860019A5DC /* Users.swift */,
+			);
+			path = TableviewWithEdit;
+			sourceTree = "<group>";
+		};
 		2899BC251F5D243A007ED724 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +271,8 @@
 		289D34DB1F7BA54000F3A567 /* RXTestCopy */ = {
 			isa = PBXGroup;
 			children = (
+				2889487B1F8DBE0C0019A5DC /* TableviewWithEdit */,
+				289F51A01F8DAAA800D95FD2 /* SimpleTableViewSection */,
 				284B7D361F8CC12A00B4CFB4 /* SimpleTableView */,
 				287EE9101F8C6B7400AF71E9 /* Calculator */,
 				287EE90B1F8C5BE200AF71E9 /* APIWrapper */,
@@ -256,6 +281,15 @@
 				288398621F7C92350030C37F /* AddNumber */,
 			);
 			path = RXTestCopy;
+			sourceTree = "<group>";
+		};
+		289F51A01F8DAAA800D95FD2 /* SimpleTableViewSection */ = {
+			isa = PBXGroup;
+			children = (
+				289F51A11F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift */,
+				289F51A31F8DAAE400D95FD2 /* SectionTableView.storyboard */,
+			);
+			path = SimpleTableViewSection;
 			sourceTree = "<group>";
 		};
 		54C100911E565B267E53F3F5 /* Frameworks */ = {
@@ -342,6 +376,8 @@
 			files = (
 				283F9C5A1F7C8F5400D0F515 /* TestLogin.storyboard in Resources */,
 				284B7D381F8CC14500B4CFB4 /* SimpleTableView.storyboard in Resources */,
+				2889487D1F8DBE810019A5DC /* EditTableView.storyboard in Resources */,
+				289F51A41F8DAAE400D95FD2 /* SectionTableView.storyboard in Resources */,
 				288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */,
 				288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */,
 				2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */,
@@ -409,10 +445,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288948811F8DC1760019A5DC /* RandomUserAPI.swift in Sources */,
 				2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */,
 				287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */,
 				2883987B1F7CD8F60030C37F /* ZJSignUpProtocols.swift in Sources */,
 				289E33E11F8B6A9F00FE7D1C /* BindValidationExtension.swift in Sources */,
+				2889487F1F8DBE9F0019A5DC /* ZJEditTableViewController.swift in Sources */,
 				287C9C201F72186000D0E8A0 /* String+Height.swift in Sources */,
 				28C022321F8B4C590008FBBA /* ObservableLoginModel.swift in Sources */,
 				2883986D1F7CBF0B0030C37F /* ZJSimpleValidViewController.swift in Sources */,
@@ -423,9 +461,11 @@
 				288398641F7C92580030C37F /* ZJAddNumViewController.swift in Sources */,
 				28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */,
 				2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */,
+				289F51A21F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift in Sources */,
 				288437461F71022700CEF434 /* RegisterViewModel.swift in Sources */,
 				287EE9161F8C6CA600AF71E9 /* ZJCalculatorViewController.swift in Sources */,
 				287EE90F1F8C5D2B00AF71E9 /* ZJAPIWrapperViewController.swift in Sources */,
+				288948831F8DC1860019A5DC /* Users.swift in Sources */,
 				288437481F71023800CEF434 /* Protocol.swift in Sources */,
 				287EE9181F8C71A700AF71E9 /* Operators.swift in Sources */,
 				288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */,

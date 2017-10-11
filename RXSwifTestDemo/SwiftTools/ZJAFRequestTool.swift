@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+typealias Parameters = [String:Any]
 
 class ZJAFRequestTool {
     ///会话中心
@@ -29,11 +30,10 @@ extension ZJAFRequestTool {
     ///
     /// - Parameters:
     ///   - urlString: url
-    ///   - params: 参数
+    ///   - params: 参数 可以为空 nil 设置Parameters?=nil 会多出一个函数不带参数的
     ///   - success: 成功回调
     ///   - failture: 失败回调
-    class func getRequest(urlString: String, params : [String : Any], success : @escaping (_ response : AnyObject)->(), failture : @escaping (_ error : String)->()) {
-        
+    class func getRequest(urlString: String, params : Parameters?, success : @escaping (_ response : AnyObject)->(), failture : @escaping (_ error : String)->()) {
         let url = try! URLHandler(name: urlString).asURL()
         //使用Alamofire进行网络请求时，调用该方法的参数都是通过getRequest(urlString， params, success :, failture :）传入的，而success传入的其实是一个接受           [String : AnyObject]类型 返回void类型的函数
         ZJAFRequestTool.shareInstance.session.request(url, method: .get, parameters: params).responseJSON { (response) in
@@ -55,13 +55,11 @@ extension ZJAFRequestTool {
     ///
     /// - Parameters:
     ///   - urlString: url
-    ///   - params: 参数
+    ///   - params: 参数 可以为空 nil 设置Parameters?=nil 会多出一个函数不带参数的
     ///   - success: 成功回调
     ///   - failture: 失败回调
-    class func postRequest(urlString : String, params : [String : Any], success : @escaping (_ response : AnyObject)->(), failture : @escaping (_ error : String)->()) {
-        
+    class func postRequest(urlString : String, params : Parameters?, success : @escaping (_ response : AnyObject)->(), failture : @escaping (_ error : String)->()) {
         let url = try! URLHandler(name: urlString).asURL()
-        
         ZJAFRequestTool.shareInstance.session.request(url, method: HTTPMethod.post, parameters: params).responseJSON { (response) in
             switch response.result{
             case .success:
@@ -85,9 +83,7 @@ extension ZJAFRequestTool {
     ///   - success:
     ///   - failture:
     func upLoadImageRequest(urlString : String, params:[String:String], data: [Data], name: [String],success : @escaping (_ response : [String : AnyObject])->(), failture : @escaping (_ error : String)->()){
-        
         let headers = ["content-type":"multipart/form-data"]
-        
         ZJAFRequestTool.shareInstance.session.upload(
             multipartFormData: { multipartFormData in
                 //666多张图片上传
@@ -118,8 +114,6 @@ extension ZJAFRequestTool {
     }
 }
 
-
-
 /// 处理url转化
 class URLHandler {
     var paramURL:String!
@@ -136,5 +130,3 @@ extension URLHandler: URLConvertible {
         return try urlString.asURL()
     }
 }
-
-

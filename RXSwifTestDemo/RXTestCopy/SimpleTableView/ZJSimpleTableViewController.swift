@@ -10,9 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-
 class ZJSimpleTableViewController: UIViewController ,UITableViewDelegate{
-
     @IBOutlet weak var myTableView: UITableView!
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
@@ -20,16 +18,24 @@ class ZJSimpleTableViewController: UIViewController ,UITableViewDelegate{
         let items = Observable.just(
             (0..<20).map { "\($0)" }
         )
-        //开始设置tableview
         items
             .bind(to: myTableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element) @ row \(row)"
             }
             .disposed(by: disposeBag)
-        //tableViewcell的点击
-        items.bind(to: myTableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)){ (row,element,cell) in
-            
-            
-        }
+        
+        myTableView.rx
+            .modelSelected(String.self)
+            .subscribe(onNext:  { value in
+                print("开始选中====\(value)")
+            })
+            .disposed(by: disposeBag)
+        
+        myTableView.rx
+            .itemAccessoryButtonTapped
+            .subscribe(onNext: { indexPath in
+                print("显示详情===\(indexPath.row)")
+            })
+            .disposed(by: disposeBag)
     }
 }
