@@ -26,8 +26,9 @@ class ZJSimpleTableViewController: UIViewController ,UITableViewDelegate{
         
         myTableView.rx
             .modelSelected(String.self)
-            .subscribe(onNext:  { value in
+            .subscribe(onNext:  { [unowned self]value in
                 print("开始选中====\(value)")
+                self.showAlertView(info: "开始选中====\(value)")
             })
             .disposed(by: disposeBag)
         
@@ -35,7 +36,15 @@ class ZJSimpleTableViewController: UIViewController ,UITableViewDelegate{
             .itemAccessoryButtonTapped
             .subscribe(onNext: { indexPath in
                 print("显示详情===\(indexPath.row)")
+                self.showAlertView(info: "显示详情===\(indexPath.row)")
             })
             .disposed(by: disposeBag)
+    }
+    
+    func showAlertView(info:String) {
+        let alertView = UIAlertController.init(title: "提示", message: info, preferredStyle: .alert)
+        let confirm = UIAlertAction.init(title: "确定", style: .default, handler: nil)
+        alertView.addAction(confirm)
+        present(alertView, animated: true, completion: nil)
     }
 }

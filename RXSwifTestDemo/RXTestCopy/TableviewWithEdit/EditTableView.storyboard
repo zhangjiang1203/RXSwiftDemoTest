@@ -53,7 +53,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yl1-bN-wGb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit TabelView" id="3FL-g7-Hbj"/>
+                    <navigationItem key="navigationItem" title="Edit TabelView" id="3FL-g7-Hbj">
+                        <barButtonItem key="rightBarButtonItem" title="编辑" id="6G7-b7-cxt">
+                            <connections>
+                                <action selector="tableViewEditAction:" destination="U7G-uh-Skc" id="rww-O3-JEd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="myTableView" destination="0I8-Td-boO" id="Not-4X-Ty3"/>

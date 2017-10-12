@@ -34,9 +34,7 @@ struct TableViewEditComandsViewModel {
             return TableViewEditComandsViewModel.init(favoriteUsers: all[0], users: all[1])
         }
     }
-    
 }
-
 
 //定义tableView的操作
 enum TableViewEditingCommand {
@@ -49,6 +47,7 @@ enum TableViewEditingCommand {
 class ZJEditTableViewController: UIViewController,UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
+    var isEdit: Bool = false
     
     let dataSource = ZJEditTableViewController.configurationDataSource()
     let disposeBag = DisposeBag()
@@ -102,7 +101,6 @@ class ZJEditTableViewController: UIViewController,UITableViewDelegate {
             .map{ [unowned self] indexPath in
                 return (indexPath,self.dataSource[indexPath])
             }.subscribe(onNext: { [unowned self](indexPath,user) in
-//                print("当前选中==\(indexPath.row) @ \(user)")
                 self.showDetailsForUser(user)
             }).disposed(by: disposeBag)
         
@@ -110,15 +108,33 @@ class ZJEditTableViewController: UIViewController,UITableViewDelegate {
             .disposed(by: disposeBag)
     }
     
+    //添加headerSection
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let title = dataSource[section]
+        
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "  \(title)"
+        label.textColor = UIColor.white
+        label.backgroundColor = UIColor.darkGray
+        label.alpha = 0.9
+        
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    @IBAction func tableViewEditAction(_ sender: Any) {
+        isEdit = !isEdit
+        myTableView.isEditing = isEdit
+    }
+    
     private func showDetailsForUser(_ user: Users) {
         let storyboard = UIStoryboard(name: "EditTableView", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "userDetailVC") as! ZJUserDetailViewController
         viewController.user = user
         self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
     }
     
     static func configurationDataSource()-> RxTableViewSectionedReloadDataSource<SectionModel<String,Users>> {

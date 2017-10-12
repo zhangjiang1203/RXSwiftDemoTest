@@ -47,9 +47,17 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
         myTableView.rx.itemSelected
             .map{ [unowned self] indexPath in
                 return (indexPath,self.dataSource[indexPath])
-            }.subscribe(onNext: { (indexPath,element) in
+            }.subscribe(onNext: { [unowned self](indexPath,element) in
                 print("当前选中==\(indexPath.row) @ \(element)")
+                self.showAlertView(info: "当前选中==\(indexPath.row) @ \(element)")
             }).disposed(by: disposeBag)
+    }
+    
+    func showAlertView(info:String) {
+        let alertView = UIAlertController.init(title: "提示", message: info, preferredStyle: .alert)
+        let confirm = UIAlertAction.init(title: "确定", style: .default, handler: nil)
+        alertView.addAction(confirm)
+        present(alertView, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
