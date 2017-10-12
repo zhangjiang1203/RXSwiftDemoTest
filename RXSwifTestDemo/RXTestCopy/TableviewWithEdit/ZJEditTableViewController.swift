@@ -89,7 +89,7 @@ class ZJEditTableViewController: UIViewController,UITableViewDelegate {
                         scheduler: MainScheduler.instance,
                         feedback: {_ in initialLoadCommand},{_ in deleteUsersCommmand},{ _ in moveUserCommand})
             .shareReplay(1)
-        
+        //viewModel绑定到dataSource
         viewModel
             .map{[
                SectionModel(model: "Favorite Users", items: $0.favoriteUsers),
@@ -98,20 +98,23 @@ class ZJEditTableViewController: UIViewController,UITableViewDelegate {
             .bind(to: myTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        
-        //点击cell跳转
         myTableView.rx.itemSelected
-            .withLatestFrom(viewModel) /*{ i, viewModel in
-                let all = [viewModel.favoriteUsers, viewModel.users]
-                return all[i.section][i.row]
-            }*/
-            .subscribe(onNext: { (model) in
-                
-            })
-            .disposed(by: disposeBag)
+            .map{ [unowned self] indexPath in
+                return (indexPath,self.dataSource[indexPath])
+            }.subscribe(onNext: { [unowned self](indexPath,user) in
+//                print("当前选中==\(indexPath.row) @ \(user)")
+                self.showDetailsForUser(user)
+            }).disposed(by: disposeBag)
         
         myTableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+    }
+    
+    private func showDetailsForUser(_ user: Users) {
+        let storyboard = UIStoryboard(name: "EditTableView", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "userDetailVC") as! ZJUserDetailViewController
+        viewController.user = user
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

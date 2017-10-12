@@ -37,6 +37,7 @@
 		2889487F1F8DBE9F0019A5DC /* ZJEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */; };
 		288948811F8DC1760019A5DC /* RandomUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288948801F8DC1760019A5DC /* RandomUserAPI.swift */; };
 		288948831F8DC1860019A5DC /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288948821F8DC1860019A5DC /* Users.swift */; };
+		2899136F1F8F049200166C9E /* ZJUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899136E1F8F049200166C9E /* ZJUserDetailViewController.swift */; };
 		2899BC321F5D243B007ED724 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC311F5D243B007ED724 /* AppDelegate.swift */; };
 		2899BC341F5D243B007ED724 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899BC331F5D243B007ED724 /* ViewController.swift */; };
 		2899BC371F5D243B007ED724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2899BC351F5D243B007ED724 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 		2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJEditTableViewController.swift; sourceTree = "<group>"; };
 		288948801F8DC1760019A5DC /* RandomUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPI.swift; sourceTree = "<group>"; };
 		288948821F8DC1860019A5DC /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		2899136E1F8F049200166C9E /* ZJUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZJUserDetailViewController.swift; sourceTree = "<group>"; };
 		2899BC2E1F5D243A007ED724 /* RXSwifTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwifTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2899BC311F5D243B007ED724 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2899BC331F5D243B007ED724 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				2889487E1F8DBE9F0019A5DC /* ZJEditTableViewController.swift */,
 				288948801F8DC1760019A5DC /* RandomUserAPI.swift */,
 				288948821F8DC1860019A5DC /* Users.swift */,
+				2899136E1F8F049200166C9E /* ZJUserDetailViewController.swift */,
 			);
 			path = TableviewWithEdit;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2899136F1F8F049200166C9E /* ZJUserDetailViewController.swift in Sources */,
 				288948811F8DC1760019A5DC /* RandomUserAPI.swift in Sources */,
 				2899BC441F5D2602007ED724 /* ZJLoginInViewController.swift in Sources */,
 				287C9C211F72186000D0E8A0 /* ZJAFRequestTool.swift in Sources */,

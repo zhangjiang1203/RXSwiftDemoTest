@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,9 +39,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="gmV-0q-wc7" kind="push" id="xda-c8-jXF"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -65,17 +63,47 @@
             </objects>
             <point key="canvasLocation" x="-12" y="59"/>
         </scene>
-        <!--DetailImage-->
+        <!--DetailInformation-->
         <scene sceneID="yeb-yW-1MT">
             <objects>
-                <viewController id="gmV-0q-wc7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userDetailVC" id="gmV-0q-wc7" customClass="ZJUserDetailViewController" customModule="RXSwifTestDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="239-s2-kXZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VaW-Fb-GB8">
+                                <rect key="frame" x="127" y="50" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="MZh-Bn-9V0"/>
+                                    <constraint firstAttribute="width" secondItem="VaW-Fb-GB8" secondAttribute="height" multiplier="1:1" id="Wbw-HY-GJe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m67-TV-ss5">
+                                <rect key="frame" x="20" y="190" width="335" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="pYP-GZ-7xe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VaW-Fb-GB8" firstAttribute="centerX" secondItem="239-s2-kXZ" secondAttribute="centerX" id="2qV-32-5Dx"/>
+                            <constraint firstItem="e71-y2-9pN" firstAttribute="trailing" secondItem="m67-TV-ss5" secondAttribute="trailing" constant="20" id="Ff2-oo-ubM"/>
+                            <constraint firstItem="m67-TV-ss5" firstAttribute="top" secondItem="VaW-Fb-GB8" secondAttribute="bottom" constant="20" id="HJ9-J0-wrC"/>
+                            <constraint firstItem="m67-TV-ss5" firstAttribute="leading" secondItem="e71-y2-9pN" secondAttribute="leading" constant="20" id="fSQ-2B-uql"/>
+                            <constraint firstItem="VaW-Fb-GB8" firstAttribute="top" secondItem="e71-y2-9pN" secondAttribute="top" constant="50" id="hT2-VK-XYs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e71-y2-9pN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="DetailImage" id="gz4-kJ-HVh"/>
+                    <navigationItem key="navigationItem" title="DetailInformation" id="gz4-kJ-HVh"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="userImageView" destination="VaW-Fb-GB8" id="MkH-rG-sph"/>
+                        <outlet property="userNameLabel" destination="m67-TV-ss5" id="whm-Hk-Pc3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rw-81-yLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

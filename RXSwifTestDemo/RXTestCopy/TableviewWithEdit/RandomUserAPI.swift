@@ -45,7 +45,7 @@ class RandomUserAPI {
             let name = user["name"] as? [String:String]
             let imageurl = user["picture"] as? [String:String]
             
-            guard let first = name?["first"] ,let last = name?["last"] ,let imageURL = imageurl?["medium"] else{
+            guard let first = name?["first"] ,let last = name?["last"] ,let imageURL = imageurl?["large"] else{
                 throw userParseError
             }
             

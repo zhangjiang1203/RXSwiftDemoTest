@@ -9,4 +9,5 @@ target 'RXSwifTestDemo' do
     pod 'Alamofire', '~> 4.5.0'      #网络请求
     pod 'RxDataSources', '~> 1.0'
     pod 'Then', '~> 2.1.0'#简化对象初始化
+    pod 'Kingfisher', '~> 3.10.2'    #网络图片缓存
 end

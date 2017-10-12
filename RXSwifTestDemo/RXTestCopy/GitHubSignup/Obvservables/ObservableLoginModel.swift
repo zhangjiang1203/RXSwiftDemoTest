@@ -25,7 +25,7 @@ class ObservableLoginModel{
         password:Observable<String>,
         confirm:Observable<String>,
         signAble:Observable<Void>)) {
-        
+        //进行验证 ，
         let validationService = ValidationAbleService()
         userNameValid = input.userName.flatMapLatest{userName in
             return validationService.userNameValid(username: userName)
