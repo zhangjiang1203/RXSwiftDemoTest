@@ -13,6 +13,7 @@ import RxCocoa
 class LoginViewModel {
     //输出
     let userNameUsable:Driver<Result>
+    let userPasswordAble:Driver<Result>
     let loginButtonEnabled :Driver<Bool>
     let loginResult:Driver<Result>
     
@@ -20,7 +21,11 @@ class LoginViewModel {
         userNameUsable = input.userName
                               .flatMapLatest{ username  in
                                   return service.LoginUserNameValid(username)
-                                                .asDriver(onErrorJustReturn: .failed(message: "连接服务失败"))
+                                                .asDriver(onErrorJustReturn: .failed(message: "连接服务失败"))}
+        userPasswordAble = input.password
+            .flatMapLatest{ password in
+            return service.LoginPasswordValid(password)
+                .asDriver(onErrorJustReturn: .failed(message: "密码填写错误"))
         }
         
         let userNameAndPassword = Driver.combineLatest(input.userName,input.password){($0,$1)}

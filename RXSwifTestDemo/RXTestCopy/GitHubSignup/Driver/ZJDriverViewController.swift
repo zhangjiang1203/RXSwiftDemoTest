@@ -30,9 +30,7 @@ class ZJDriverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         signUpBtn.layer.cornerRadius = 20
-        
         //开始绑定
         let driver = DriverLoginMode.init(input: (
             userName:accontField.rx.text.orEmpty.asDriver(),

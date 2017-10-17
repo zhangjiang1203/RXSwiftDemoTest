@@ -80,16 +80,29 @@ class ValidationService {
         return .just(.failed(message:"注册失败"))
     }
     
-    //MARK: 登录验证
+    //MARK: 登录用户名验证
     func LoginUserNameValid(_ userName:String) -> Observable<Result> {
         if userName.characters.count == 0 {
             return .just(.empty);
         }
         
-        if userNameVaild(userName) {
-            return .just(.ok(message:"用户名可用"))
+        if userName.characters.count < minCharactersCount {
+            return .just(.failed(message: "用户名至少是6个字符"))
         }
-        return .just(.failed(message: "用户名不存在"))
+        
+        return .just(.ok(message:"用户名可用"))
+    }
+    
+    func LoginPasswordValid(_ password:String) -> Observable<Result> {
+        if password.characters.count == 0 {
+            return .just(.empty)
+        }
+        
+        if password.characters.count < minCharactersCount {
+            return .just(.failed(message:"密码长度至少6个字符"))
+        }
+        
+        return .just(.ok(message:"密码可用"))
     }
     
     //开始登录

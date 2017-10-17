@@ -25,47 +25,52 @@ class ZJLoginInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let viewModel = LoginViewModel.init(input: (userName: accountField.rx.text.orEmpty.asDriver(), password: passwordField.rx.text.orEmpty.asDriver(), loginTaps: loginBtn.rx.tap.asDriver()), service: ValidationService.instance)
-//
-//        viewModel.userNameUsable
-//            .drive(accountInfoLabel.rx.validationResult)
-//            .addDisposableTo(disposeBag)
-//
-//        viewModel.loginButtonEnabled
-//            .drive(onNext: { [unowned self] valid in
-//            self.loginBtn.isEnabled = valid
-//            self.loginBtn.alpha = valid ? 1 : 0.5
-//            })
-//            .addDisposableTo(disposeBag)
-//
-//        viewModel.loginResult
-//            .drive(onNext: { [unowned self] result in
-//                switch result{
-//                case .empty:
-//                    self.showAlert(message: "")
-//                case let .ok(message):
-//                    print(message)
-//                    //开始进行跳转
-//                    self.showAlert(message: message)
-//                case let .failed(message):
-//                    self.showAlert(message: message)
-//                }
-//        })
-//        .addDisposableTo(disposeBag)
-        
-        loginMyAccount()
+        let viewModel = LoginViewModel.init(input: (userName: accountField.rx.text.orEmpty.asDriver(), password: passwordField.rx.text.orEmpty.asDriver(), loginTaps: loginBtn.rx.tap.asDriver()), service: ValidationService.instance)
+
+        viewModel.userNameUsable
+            .drive(accountInfoLabel.rx.validationResult)
+            .addDisposableTo(disposeBag)
+
+        viewModel.userPasswordAble
+            .drive(passwordInfoLabel.rx.validationResult)
+            .addDisposableTo(disposeBag)
+
+        viewModel.loginButtonEnabled
+            .drive(onNext: { [unowned self] valid in
+            self.loginBtn.isEnabled = valid
+            self.loginBtn.alpha = valid ? 1 : 0.5
+            })
+            .addDisposableTo(disposeBag)
+
+        viewModel.loginResult
+            .drive(onNext: { [unowned self] result in
+                switch result{
+                case .empty:
+                    self.showAlert(message: "")
+                case let .ok(message):
+                    print(message)
+                    //开始进行跳转
+                    self.showAlert(message: message)
+                case let .failed(message):
+                    self.showAlert(message: message)
+                }
+        })
+        .addDisposableTo(disposeBag)
+        //使用Observable定义登录界面
+//        loginMyAccount()
     }
     
     
     func loginMyAccount()  {
         
-        let accountValid:Observable = accountField.rx.text.orEmpty.map{
-            return $0.characters.count >= 6
+        let accountValid = accountField.rx.text.orEmpty.map{ value in
+            return value.characters.count >= 6
         }
         
-        let passwordValid:Observable = passwordField.rx.text.orEmpty.map{
-            return $0.characters.count >= 6
+        let passwordValid = passwordField.rx.text.orEmpty.map{ value in
+            return value.characters.count >= 6
         }
+
         //绑定显示
         accountValid.bind(to: accountInfoLabel.rx.isHidden).addDisposableTo(disposeBag)
         passwordValid.bind(to: passwordInfoLabel.rx.isHidden).addDisposableTo(disposeBag)
@@ -76,6 +81,9 @@ class ZJLoginInViewController: UIViewController {
         }
         //绑定按钮
         loginObserver.bind(to: loginBtn.rx.isEnabled).addDisposableTo(disposeBag)
+        loginObserver.subscribe(onNext: { [unowned self] valid in
+            self.loginBtn.alpha = valid ? 1 : 0.5
+        }).disposed(by: disposeBag)
         
         loginBtn.rx.tap
             .asObservable()

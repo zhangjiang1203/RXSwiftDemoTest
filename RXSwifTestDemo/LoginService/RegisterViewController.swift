@@ -28,7 +28,7 @@ class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addRightButtonItem()
+//        addRightButtonItem()
         
         let viewModel = RegisterViewModel()
         //绑定输入框
