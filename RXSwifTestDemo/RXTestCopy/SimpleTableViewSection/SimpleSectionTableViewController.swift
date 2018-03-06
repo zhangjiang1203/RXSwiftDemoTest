@@ -54,14 +54,11 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
                 return (indexPath,self.dataSource[indexPath])
             }.subscribe(onNext: { [unowned self](indexPath,element) in
                 print("当前选中==\(indexPath.row) @ \(element)")
-//                self.showAlertView(info: "当前选中==\(indexPath.row) @ \(element)")
-                self.itemSource = self.createMyDataSource(data: [1.0,11.0,12.0,13.0,14.0,15.0])
-                self.itemSource.bind(to: self.myTableView.rx.items(dataSource: self.dataSource)).disposed(by: self.disposeBag)
-
-                self.itemSource.subscribe({ (model) in
-                    
-                    print(model.element as Any)
+                let delegateVC =  SubjectDelegateViewController.init(nibName: "SubjectDelegateViewController", bundle: nil);
+                delegateVC.publishDel.subscribe(onNext: { (index) in
+                    print("代理开始传值："+"\(index)")
                 }).disposed(by: self.disposeBag)
+                self.navigationController?.pushViewController(delegateVC, animated: true)
             }).disposed(by: disposeBag)
     }
     
