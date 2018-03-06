@@ -16,18 +16,24 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
     @IBOutlet weak var myTableView: UITableView!
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String,Double>>()
+    var itemSource:Observable<[SectionModel<String,Double>]>!
+
+    
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = Observable.just([
-            SectionModel.init(model: "First Section", items: [
-                1.0,2.0,3.0]),
-            SectionModel.init(model: "Second Section", items: [
-                1.0,2.0,3.0]),
-            SectionModel.init(model: "Third Section", items: [
-                1.0,2.0,3.0])
-            ])
+//        let items = Observable.just([
+//            SectionModel.init(model: "First Section", items: [
+//                1.0,2.0,3.0]),
+//            SectionModel.init(model: "Second Section", items: [
+//                1.0,2.0,3.0]),
+//            SectionModel.init(model: "Third Section", items: [
+//                1.0,2.0,3.0])
+//            ])
+        
+        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
+        
         
         dataSource.configureCell = {(_,tableView,indexPath,element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as UITableViewCell
@@ -39,8 +45,7 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
             return data[sectionIndex].model
         }
         //绑定数据
-        items.bind(to: myTableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+        itemSource.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         //设置代理
         myTableView.rx.setDelegate(self).disposed(by: disposeBag)
         //设置点击事件  包装信息
@@ -49,9 +54,23 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
                 return (indexPath,self.dataSource[indexPath])
             }.subscribe(onNext: { [unowned self](indexPath,element) in
                 print("当前选中==\(indexPath.row) @ \(element)")
-                self.showAlertView(info: "当前选中==\(indexPath.row) @ \(element)")
+//                self.showAlertView(info: "当前选中==\(indexPath.row) @ \(element)")
+                self.itemSource = self.createMyDataSource(data: [1.0,11.0,12.0,13.0,14.0,15.0])
+                self.itemSource.bind(to: self.myTableView.rx.items(dataSource: self.dataSource)).disposed(by: self.disposeBag)
+
+                self.itemSource.subscribe({ (model) in
+                    
+                    print(model.element as Any)
+                }).disposed(by: self.disposeBag)
             }).disposed(by: disposeBag)
     }
+    
+    func createMyDataSource(data:Array<Double>) -> Observable<[SectionModel<String,Double>]> {
+        let model = SectionModel.init(model: "section", items: data)
+        
+        return Observable.from(optional: [model])
+    }
+
     
     func showAlertView(info:String) {
         let alertView = UIAlertController.init(title: "提示", message: info, preferredStyle: .alert)
