@@ -17,6 +17,8 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String,Double>>()
     var itemSource:Observable<[SectionModel<String,Double>]>!
+    var result:    Observable<[SectionModel<String,Double>]>?
+
 
     
     let disposeBag = DisposeBag()
@@ -33,7 +35,7 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
 //            ])
         
         itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
-        
+        result = createMyDataSource(data: [1,2.0,12,14,15])
         
         dataSource.configureCell = {(_,tableView,indexPath,element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as UITableViewCell
