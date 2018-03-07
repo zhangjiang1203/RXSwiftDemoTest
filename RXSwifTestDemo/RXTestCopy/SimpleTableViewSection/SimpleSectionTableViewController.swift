@@ -15,27 +15,18 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
     
+    
+    var myInfoList:BehaviorSubject = BehaviorSubject.init(value: [SectionModel<String, Double>]())
+    
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String,Double>>()
     var itemSource:Observable<[SectionModel<String,Double>]>!
     var result:    Observable<[SectionModel<String,Double>]>?
-
-
-    
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let items = Observable.just([
-//            SectionModel.init(model: "First Section", items: [
-//                1.0,2.0,3.0]),
-//            SectionModel.init(model: "Second Section", items: [
-//                1.0,2.0,3.0]),
-//            SectionModel.init(model: "Third Section", items: [
-//                1.0,2.0,3.0])
-//            ])
-        
-        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
-        result = createMyDataSource(data: [1,2.0,12,14,15])
+//        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
+//        result = createMyDataSource(data: [1,2.0,12,14,15])
         
         dataSource.configureCell = {(_,tableView,indexPath,element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as UITableViewCell
@@ -46,8 +37,13 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
         dataSource.titleForHeaderInSection = { data ,sectionIndex in
             return data[sectionIndex].model
         }
+        
+//        myInfoList.asObserver().bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by:disposeBag)
+        myInfoList.asObserver()
+            .bind(to: myTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
         //绑定数据
-        itemSource.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+//        itemSource.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         //设置代理
         myTableView.rx.setDelegate(self).disposed(by: disposeBag)
         //设置点击事件  包装信息
@@ -64,10 +60,8 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
             }).disposed(by: disposeBag)
     }
     
-    func createMyDataSource(data:Array<Double>) -> Observable<[SectionModel<String,Double>]> {
-        let model = SectionModel.init(model: "section", items: data)
-        
-        return Observable.from(optional: [model])
+    func createMyDataSource(data:Array<Double>) {
+        myInfoList.onNext([SectionModel.init(model: "hahha", items: data)])
     }
 
     
