@@ -355,7 +355,7 @@
 				TargetAttributes = {
 					2899BC2D1F5D243A007ED724 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = N3DR39B4G7;
+						DevelopmentTeam = 4A75LEU8F4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -611,7 +611,7 @@
 			baseConfigurationReference = 3CC5FF772988DD5F55764505 /* Pods-RXSwifTestDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N3DR39B4G7;
+				DEVELOPMENT_TEAM = 4A75LEU8F4;
 				INFOPLIST_FILE = RXSwifTestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dfhz.RXSwifTestDemo;
@@ -625,7 +625,7 @@
 			baseConfigurationReference = 1A1EAC7A4B6212DF6F429045 /* Pods-RXSwifTestDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N3DR39B4G7;
+				DEVELOPMENT_TEAM = 4A75LEU8F4;
 				INFOPLIST_FILE = RXSwifTestDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dfhz.RXSwifTestDemo;
