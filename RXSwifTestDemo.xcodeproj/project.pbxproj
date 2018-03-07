@@ -53,6 +53,8 @@
 		28C022321F8B4C590008FBBA /* ObservableLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C022311F8B4C590008FBBA /* ObservableLoginModel.swift */; };
 		28C022341F8B51090008FBBA /* ValidationAbleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C022331F8B51090008FBBA /* ValidationAbleService.swift */; };
 		2E5B004A7B1049560A5B09AD /* Pods_RXSwifTestDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4666AE27A69A2E2D3C55EC /* Pods_RXSwifTestDemo.framework */; };
+		CF298376204EDA1C00A520B4 /* SubjectDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF298374204EDA1C00A520B4 /* SubjectDelegateViewController.swift */; };
+		CF298377204EDA1C00A520B4 /* SubjectDelegateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF298375204EDA1C00A520B4 /* SubjectDelegateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		28C022331F8B51090008FBBA /* ValidationAbleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAbleService.swift; sourceTree = "<group>"; };
 		3CC5FF772988DD5F55764505 /* Pods-RXSwifTestDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RXSwifTestDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RXSwifTestDemo/Pods-RXSwifTestDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BE4666AE27A69A2E2D3C55EC /* Pods_RXSwifTestDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RXSwifTestDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF298374204EDA1C00A520B4 /* SubjectDelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDelegateViewController.swift; sourceTree = "<group>"; };
+		CF298375204EDA1C00A520B4 /* SubjectDelegateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectDelegateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +295,8 @@
 			children = (
 				289F51A11F8DAAD100D95FD2 /* SimpleSectionTableViewController.swift */,
 				289F51A31F8DAAE400D95FD2 /* SectionTableView.storyboard */,
+				CF298374204EDA1C00A520B4 /* SubjectDelegateViewController.swift */,
+				CF298375204EDA1C00A520B4 /* SubjectDelegateViewController.xib */,
 			);
 			path = SimpleTableViewSection;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				289F51A41F8DAAE400D95FD2 /* SectionTableView.storyboard in Resources */,
 				288398741F7CD11A0030C37F /* ZJGithubObserver.storyboard in Resources */,
 				288398661F7C928A0030C37F /* AddNumStory.storyboard in Resources */,
+				CF298377204EDA1C00A520B4 /* SubjectDelegateViewController.xib in Resources */,
 				2899BC3C1F5D243C007ED724 /* LaunchScreen.storyboard in Resources */,
 				287EE90D1F8C5C1000AF71E9 /* APIWrapper.storyboard in Resources */,
 				2899BC391F5D243B007ED724 /* Assets.xcassets in Resources */,
@@ -475,6 +482,7 @@
 				288398791F7CD14C0030C37F /* ZJObserverViewController.swift in Sources */,
 				288589981F723EF60047A6AB /* LoginViewModel.swift in Sources */,
 				2884374A1F71024700CEF434 /* Service.swift in Sources */,
+				CF298376204EDA1C00A520B4 /* SubjectDelegateViewController.swift in Sources */,
 				284B7D351F8CB17D00B4CFB4 /* Observable+Extensions.swift in Sources */,
 				288398761F7CD1330030C37F /* ZJDriverViewController.swift in Sources */,
 				284B7D3A1F8CC16500B4CFB4 /* ZJSimpleTableViewController.swift in Sources */,
