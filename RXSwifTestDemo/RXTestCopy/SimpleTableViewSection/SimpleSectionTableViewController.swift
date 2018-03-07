@@ -15,7 +15,9 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
     
-    
+    //定义的BehaviorSubject初始化的时候添加的模型数据类型和定义的dataSource中的数据类型要一致
+    //定义的SectionModel中显示的类可以定义为任何你想定义的类型
+    var anyListInfo:BehaviorSubject = BehaviorSubject.init(value: [SectionModel<String,Any>]())
     var myInfoList:BehaviorSubject = BehaviorSubject.init(value: [SectionModel<String, Double>]())
     
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String,Double>>()
@@ -24,9 +26,7 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
-//        result = createMyDataSource(data: [1,2.0,12,14,15])
+        rightBarButton()
         
         dataSource.configureCell = {(_,tableView,indexPath,element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as UITableViewCell
@@ -37,13 +37,11 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
         dataSource.titleForHeaderInSection = { data ,sectionIndex in
             return data[sectionIndex].model
         }
-        
-//        myInfoList.asObserver().bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by:disposeBag)
+        //数据关联
         myInfoList.asObserver()
             .bind(to: myTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        //绑定数据
-//        itemSource.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        myInfoList.onNext([SectionModel.init(model: "", items: [23,89,24,100,34])])
         //设置代理
         myTableView.rx.setDelegate(self).disposed(by: disposeBag)
         //设置点击事件  包装信息
@@ -58,6 +56,18 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
                 }).disposed(by: self.disposeBag)
                 self.navigationController?.pushViewController(delegateVC, animated: true)
             }).disposed(by: disposeBag)
+    }
+    
+    
+    func rightBarButton()  {
+        let button = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 40, height: 30))
+        button.setTitle("修改", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.rx.tap.subscribe(onNext: { (sender) in
+            self.createMyDataSource(data: [12,90,23,89,45])
+        }).disposed(by: disposeBag)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
+        
     }
     
     func createMyDataSource(data:Array<Double>) {
