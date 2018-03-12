@@ -28,6 +28,8 @@ class ZJAPIWrapperViewController: UIViewController {
     @IBOutlet weak var showInfoLabel: UILabel!
     @IBOutlet var tapTest: UITapGestureRecognizer!
     
+    var showInfoArr:Observable<String>!
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -43,12 +45,7 @@ class ZJAPIWrapperViewController: UIViewController {
             self.showInfoLabel.text = "按钮点击"
         }).disposed(by: disposeBag)
         
-//        let segmentValue = Variable(0)
-//        _ = segmentTest.rx.value <-> segmentValue
-//        segmentValue.asObservable()
-//            .subscribe(onNext:{ (value) in
-//                self.showInfoLabel.text = "分段器点击==\(value)"
-//            }).disposed(by: disposeBag)
+        
         
         let segmentValue = Variable(0)
         _ = segmentTest.rx.value <-> segmentValue
@@ -80,5 +77,19 @@ class ZJAPIWrapperViewController: UIViewController {
         tapTest.rx.event.subscribe({ (tap) in
             self.showInfoLabel.text = "手势点击==😁😁😁"
         }).disposed(by: disposeBag)
+        
+        //添加的
+        showInfoArr = Observable.of("这时就是我哦1")
+        showInfoArr.asObservable().subscribe(onNext: { (data) in
+            print(data)
+        }).disposed(by: disposeBag)
+        showInfoArr.bind(to: self.showInfoLabel.rx.text).disposed(by: disposeBag)
+        
+        showInfoArr = Observable.create({ (observer) -> Disposable in
+            observer.onNext("我看一下这个能不能转化")
+            observer.onCompleted()
+            return Disposables.create()
+        })
+        
     }
 }

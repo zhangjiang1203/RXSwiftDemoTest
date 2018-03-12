@@ -15,39 +15,19 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
 
     @IBOutlet weak var myTableView: UITableView!
     
+    //定义的BehaviorSubject初始化的时候添加的模型数据类型和定义的dataSource中的数据类型要一致
+    //定义的SectionModel中显示的类可以定义为任何你想定义的类型
+    var anyListInfo:BehaviorSubject = BehaviorSubject.init(value: [SectionModel<String,Any>]())
+    var myInfoList:BehaviorSubject = BehaviorSubject.init(value: [SectionModel<String, Double>]())
+    
     let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String,Double>>()
     var itemSource:Observable<[SectionModel<String,Double>]>!
     var result:    Observable<[SectionModel<String,Double>]>?
-
-    var viewModel = MyTestModel()
-    
-
-    
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
+
         addRightBarButtonItem()
-//        let items = Observable.just([
-//            SectionModel.init(model: "First Section", items: [
-//                1.0,2.0,3.0]),
-//            SectionModel.init(model: "Second Section", items: [
-//                1.0,2.0,3.0]),
-//            SectionModel.init(model: "Third Section", items: [
-//                1.0,2.0,3.0])
-//            ])
-        
-//        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
-        
-        
-        let identifier = "411528199012185092"
-        let startIndex = identifier.index(identifier.startIndex, offsetBy: identifier.count-2)
-        let endIndex = identifier.index(startIndex, offsetBy: 1)
-        let result1 = identifier.substring(with: startIndex..<endIndex)
-        print("性别是"+result1)
-        
-        
-        result = createMyDataSource(data: [1,2.0,12,14,15])
-        
         dataSource.configureCell = {(_,tableView,indexPath,element) in
             let cell = tableView.dequeueReusableCell(withIdentifier: "sectionCell", for: indexPath) as UITableViewCell
             cell.textLabel?.text = "显示的cell \(element) @ \(indexPath.row)"
@@ -58,8 +38,12 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
             return data[sectionIndex].model
         }
         
-        //绑定数据
-        viewModel.getUsers(data: [12,34,33,35,23]).bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+
+        //数据关联
+        myInfoList.asObserver()
+            .bind(to: myTableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        myInfoList.onNext([SectionModel.init(model: "", items: [23,89,24,100,34])])
         //设置代理
         myTableView.rx.setDelegate(self).disposed(by: disposeBag)
         //设置点击事件  包装信息
@@ -75,7 +59,7 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
                 self.navigationController?.pushViewController(delegateVC, animated: true)
             }).disposed(by: disposeBag)
     }
-    
+
     func addRightBarButtonItem() {
         let rightBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 17))
         rightBtn.setImage(UIImage.init(named: "order_search"), for: .normal)
@@ -90,10 +74,8 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
-    func createMyDataSource(data:Array<Double>) -> Observable<[SectionModel<String,Double>]> {
-        let model = SectionModel.init(model: "section", items: data)
-        
-        return Observable.from(optional: [model])
+    func createMyDataSource(data:Array<Double>) {
+        myInfoList.onNext([SectionModel.init(model: "hahha", items: data)])
     }
     
     func showAlertView(info:String) {
