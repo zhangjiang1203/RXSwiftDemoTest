@@ -19,12 +19,14 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
     var itemSource:Observable<[SectionModel<String,Double>]>!
     var result:    Observable<[SectionModel<String,Double>]>?
 
+    var viewModel = MyTestModel()
+    
 
     
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addRightBarButtonItem()
 //        let items = Observable.just([
 //            SectionModel.init(model: "First Section", items: [
 //                1.0,2.0,3.0]),
@@ -34,7 +36,16 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
 //                1.0,2.0,3.0])
 //            ])
         
-        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
+//        itemSource = createMyDataSource(data: [2.3,4.0,3.0,2,12.0])
+        
+        
+        let identifier = "411528199012185092"
+        let startIndex = identifier.index(identifier.startIndex, offsetBy: identifier.count-2)
+        let endIndex = identifier.index(startIndex, offsetBy: 1)
+        let result1 = identifier.substring(with: startIndex..<endIndex)
+        print("性别是"+result1)
+        
+        
         result = createMyDataSource(data: [1,2.0,12,14,15])
         
         dataSource.configureCell = {(_,tableView,indexPath,element) in
@@ -46,8 +57,9 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
         dataSource.titleForHeaderInSection = { data ,sectionIndex in
             return data[sectionIndex].model
         }
+        
         //绑定数据
-        itemSource.bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        viewModel.getUsers(data: [12,34,33,35,23]).bind(to: myTableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         //设置代理
         myTableView.rx.setDelegate(self).disposed(by: disposeBag)
         //设置点击事件  包装信息
@@ -64,12 +76,25 @@ class SimpleSectionTableViewController: UIViewController,UITableViewDelegate {
             }).disposed(by: disposeBag)
     }
     
+    func addRightBarButtonItem() {
+        let rightBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 17))
+        rightBtn.setImage(UIImage.init(named: "order_search"), for: .normal)
+        rightBtn.setTitle("你好", for: .normal)
+        rightBtn.setTitleColor(.black, for: .normal)
+        rightBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        rightBtn.rx.tap.subscribe(onNext: { (sender) in
+            print("开始搜索")
+            
+        }).disposed(by: disposeBag)
+        let rightItem = UIBarButtonItem.init(customView: rightBtn)
+        self.navigationItem.rightBarButtonItem = rightItem
+    }
+    
     func createMyDataSource(data:Array<Double>) -> Observable<[SectionModel<String,Double>]> {
         let model = SectionModel.init(model: "section", items: data)
         
         return Observable.from(optional: [model])
     }
-
     
     func showAlertView(info:String) {
         let alertView = UIAlertController.init(title: "提示", message: info, preferredStyle: .alert)
